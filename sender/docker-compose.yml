@@ -1,5 +1,5 @@
 services:
-  mqtt_publisher:
+  mqtt-sender:
     build:
       context: ./app
     environment:

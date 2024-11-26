@@ -23,15 +23,14 @@ while True:
     # Create the message including both timestamps
     message = {
         "sequence_number": sequence_number,
-        "timestamp": timestamp,
-        "human_readable_timestamp": human_readable_timestamp
+        "timestamp": timestamp
     }
 
     # Publish the message
     client.publish(TOPIC, json.dumps(message))
 
     # Print the message sent
-    print(f"Sent: {message}")
+    print(f"[{human_readable_timestamp}] Sent: {message}")
 
     # Increment the sequence number
     sequence_number += 1
