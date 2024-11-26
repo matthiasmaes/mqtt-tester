@@ -1,0 +1,14 @@
+services:
+  mqtt_publisher:
+    build:
+      context: ./app
+    environment:
+      - BROKER=10.0.0.241
+      - PORT=1883
+      - TOPIC=test/topic
+      - DELAY=5
+      - TZ=Europe/Brussels
+    restart: always
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
